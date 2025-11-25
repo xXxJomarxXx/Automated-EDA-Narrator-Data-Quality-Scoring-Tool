@@ -8,8 +8,8 @@ from report_builder import ReportBuilder
 
 class DatasetPipeline:
     def __init__(self, path):
-        self.path = path        # CSV file path
-        self.df = None          # DataFrame
+        self.path = path       # CSV file path
+        self.df = None         # DataFrame
         self.pre = None
         self.eda = None
         self.scores = None
