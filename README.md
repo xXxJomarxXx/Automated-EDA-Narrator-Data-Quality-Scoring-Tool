@@ -41,14 +41,15 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 
 ## 4. Object-Oriented Design
 
-| Concept | Implementation |
-|---------|----------------|
-| **Classes** | 6 core classes: `DataLoader`, `Preprocessor`, `EDAAnalyzer`, `QualityScorer`, `Narrator`, `ReportBuilder` |
-| **Encapsulation** | Protected attributes (e.g., `_df`, `_eda`, `_scores`) with getter methods |
-| **Inheritance** | `NumericAnalyzer` & `CategoricalAnalyzer` inherit from `EDAAnalyzer` |
-| **Polymorphism** | `run_all()` overridden in child classes for numeric vs categorical data |
-| **Dunder Methods** | `__repr__`, `__eq__`, `__len__` in `DataLoader`; `__repr__` in `DatasetPipeline` |
-| **Composition** | `DatasetPipeline` contains Loader, Preprocessor, Analyzer, Scorer, Narrator, and ReportBuilder |
+| OOP Concept        | How it’s applied in your project                                                                                                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Classes**        | There are **6 core classes**: `DataLoader`, `Preprocessor`, `EDAAnalyzer` (base), `NumericAnalyzer`/`CategoricalAnalyzer` (children), `QualityScorer`, `Narrator`, `ReportBuilder`, and `DatasetPipeline`.  |
+| **Encapsulation**  | Protected attributes (e.g., `_df`, `_eda`, `_scores`) are used in classes. Getters like `get_df()` in `Preprocessor` and `DataLoader` provide controlled access.                                            |
+| **Inheritance**    | `NumericAnalyzer` and `CategoricalAnalyzer` **inherit** from `EDAAnalyzer`.                                                                                                                                 |
+| **Polymorphism**   | `run_all()` is **overridden** in `NumericAnalyzer` and `CategoricalAnalyzer` to handle numeric vs categorical data differently.                                                                             |
+| **Dunder Methods** | `DataLoader` has `__repr__`, `__eq__`, `__len__`; `DatasetPipeline` has `__repr__`.                                                                                                                         |
+| **Composition**    | `DatasetPipeline` **contains/uses** instances of `DataLoader`, `Preprocessor`, `EDAAnalyzer`, `QualityScorer`, `Narrator`, `ReportBuilder`.                                                                 |
+
 
 ---
 
