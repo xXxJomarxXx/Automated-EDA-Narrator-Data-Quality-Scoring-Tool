@@ -1,4 +1,4 @@
-# src/loader.py
+# Dunder methods + encapsulation
 import pandas as pd
 
 class DataLoader:
