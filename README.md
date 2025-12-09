@@ -86,3 +86,30 @@ data-narrator/
 | **Must be importable and reusable**          | All modules are in `src/` with proper `__init__.py`, allowing imports like: <br>`from src.loader import DataLoader`                                                                                                                                                                                         |
 ---
 
+Project Overview
+Features
+✅ Object-Oriented Design
+Project Structure
+
+## Object-Oriented Design (OOP)
+
+DatasetSense applies core Object-Oriented Programming (OOP) principles to achieve a modular and extensible design.
+
+### Base Class and Inheritance
+The `EDAAnalyzer` class acts as a base class for exploratory data analysis. It defines shared attributes such as the protected DataFrame (`_df`) and a common method interface through `run_all()`.
+
+Two specialized analyzers inherit from this base class:
+- `NumericAnalyzer` – performs analysis on numeric columns
+- `CategoricalAnalyzer` – performs analysis on categorical columns
+
+This design avoids code duplication and promotes reuse.
+
+### Polymorphism
+Both child classes override the `run_all()` method.  
+Although the method name is the same, each class executes different logic depending on the data type being analyzed.
+
+This enables the pipeline to treat all analyzers uniformly while allowing type-specific behavior at runtime.
+
+### Encapsulation and Reusability
+Shared functionality for selecting columns by data type is encapsulated in a protected helper method (`_get_columns`) within the base class.  
+Child classes reuse this method instead of directly accessing the DataFrame, improving maintainability and readability.
